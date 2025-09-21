@@ -23,7 +23,7 @@ mq.on('connect', function(){
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 //korvaa alla oleva URI-string omalla URI:lla (hae se Mongo Atlaksen Connect-kohdasta, lisää myös oma käyttäjätunnus ja salasana)
-const uri = "mongodb+srv://<username>:<password>@clusterxxxxx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
+const uri = "mongodb+srv://aleksi:aleksi@cluster0.kufsvod.mongodb.net/?retryWrites=true&w=majority&appName=Cluster00"; 
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -34,8 +34,8 @@ const client = new MongoClient(uri, {
 });
 
 //määritellään tietokannan ja kokoelman nimi sekä dataobjekti sensoridatan käsittelyyn
-const myDB = client.db("sensordata2");
-const myColl = myDB.collection("sensordata2");
+const myDB = client.db("SensorData");
+const myColl = myDB.collection("Data");
 var obj;
 
 //odotetaan dataa välityspalvelimelta ja viedään data tietokantaan
